@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Todo
+  profiles:
+    active: prod
+  datasource:
+    url: jdbc:mysql://localhost:3306/todo-app
+    username: root
+    password: RahulJoshi
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #HIBERNATE CONFIGURATIONS
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
