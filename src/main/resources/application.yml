@@ -16,7 +16,7 @@ spring:
   #MongoDb Configuration
   data:
     mongodb:
-      uri: mongodb+srv://Rahul:RahulJoshi@cluster0.6c4gh.mongodb.net/TodoApp?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=30000&socketTimeoutMS=30000
+      uri: ${MONGODB_URI}
       database: TodoApp
       auto-index-creation: true
 
