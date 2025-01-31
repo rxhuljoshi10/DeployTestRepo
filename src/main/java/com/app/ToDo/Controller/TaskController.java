@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
     @Autowired
     private TaskService taskService;
@@ -25,13 +25,13 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public TaskEntity updateTodo(@PathVariable Long id, @RequestBody TaskEntity taskEntity) {
+    public TaskEntity updateTodo(@PathVariable String id, @RequestBody TaskEntity taskEntity) {
         taskEntity.setId(id);
         return taskService.updateTodo(taskEntity);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTodoById(@PathVariable Long id) {
+    public void deleteTodoById(@PathVariable String id) {
         taskService.deleteTodoById(id);
     }
 }

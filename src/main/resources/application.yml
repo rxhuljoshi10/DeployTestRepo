@@ -1,19 +1,28 @@
 spring:
   application:
     name: Todo
+  server:
+    port: ${PORT:8080}
   profiles:
     active: prod
-  datasource:
-    url: jdbc:mysql://localhost:3306/todo-app
-    username: root
-    password: RahulJoshi
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+  #  datasource:
+  #    url: jdbc:mysql://localhost:3306/todo-app
+  #    username: root
+  #    password: RahulJoshi
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #MongoDb Configuration
+  data:
+    mongodb:
+      uri: mongodb+srv://Rahul:RahulJoshi@cluster0.6c4gh.mongodb.net/TodoApp?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=30000&socketTimeoutMS=30000
+      database: TodoApp
+      auto-index-creation: true
+
 
   #HIBERNATE CONFIGURATIONS
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-server:
-  port: 8081
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true

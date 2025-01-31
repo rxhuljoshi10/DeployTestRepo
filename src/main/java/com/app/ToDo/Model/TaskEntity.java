@@ -1,19 +1,22 @@
 package com.app.ToDo.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "tasks")
 public class TaskEntity {
+
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
     private String title;
     private boolean completed;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
@@ -25,7 +28,7 @@ public class TaskEntity {
         return completed;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
