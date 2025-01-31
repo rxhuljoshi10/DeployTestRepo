@@ -10,7 +10,7 @@ spring:
   #  datasource:
   #    url: jdbc:mysql://localhost:3306/todo-app
   #    username: root
-  #    password: RahulJoshi
+  #    password: ${mysqlPass}
   #    driver-class-name: com.mysql.cj.jdbc.Driver
 
   #MongoDb Configuration
